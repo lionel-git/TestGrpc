@@ -9,4 +9,9 @@
     <PackageReference Include="Grpc" Version="1.20.1" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\GreeterClient\GreeterClient.csproj" />
+    <ProjectReference Include="..\GreeterServer\GreeterServer.csproj" />
+  </ItemGroup>
+
 </Project>

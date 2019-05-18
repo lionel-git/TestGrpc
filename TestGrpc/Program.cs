@@ -11,6 +11,7 @@ namespace TestGrpc
 
             var cancelSource = new CancellationTokenSource();
             var token = cancelSource.Token;
+            Console.WriteLine(token.CanBeCanceled);
             Console.WriteLine(token.IsCancellationRequested);
             cancelSource.Cancel();
             Console.WriteLine(token.IsCancellationRequested);
