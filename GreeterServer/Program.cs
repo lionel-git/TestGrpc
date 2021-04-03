@@ -21,10 +21,17 @@ namespace GreeterServer
 {
     class GreeterImpl : Greeter.GreeterBase
     {
+        public string GetAnswer(HelloRequest request)
+        {
+           // throw new Exception("Argh exception!!");
+            return $"Hello to {request.Name}";
+        }
+
+
         // Server side handler of the SayHello RPC
         public override Task<HelloReply> SayHello(HelloRequest request, ServerCallContext context)
         {
-            return Task.FromResult(new HelloReply { Message = "Hello " + request.Name });
+            return Task.FromResult(new HelloReply { Message = GetAnswer(request) });
         }
     }
 
